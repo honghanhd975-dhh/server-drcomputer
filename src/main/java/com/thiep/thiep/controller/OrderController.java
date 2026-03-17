@@ -17,6 +17,10 @@ public class OrderController {
     public OrderController(OrderService service) {
         this.service = service;
     }
+    @GetMapping("/test")
+    public String test() {
+        return "Order API is running";
+    }
 
     @PostMapping
     public CreateOrderResponse create(@Valid @RequestBody CreateOrderRequest req) {
