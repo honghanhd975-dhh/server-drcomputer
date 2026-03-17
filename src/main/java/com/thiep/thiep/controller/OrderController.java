@@ -17,7 +17,7 @@ public class OrderController {
     public OrderController(OrderService service) {
         this.service = service;
     }
-    @GetMapping("/test")
+    @GetMapping("/check-deploy")
     public String test() {
         return "Order API is running";
     }
