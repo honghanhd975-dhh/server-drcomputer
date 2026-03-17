@@ -7,6 +7,6 @@ RUN mvn clean package -DskipTests
 # Run stage
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
-COPY --from=build /app/target/DrComputer-0.0.1-SNAPSHOT.war drcomputer.war
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","drcomputer.war"]
+ENTRYPOINT ["java","-jar","app.jar"]
